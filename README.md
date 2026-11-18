@@ -73,3 +73,7 @@ The site is exported statically (`output: 'export'`) and `wrangler.jsonc` serves
 - Build command: `npm run build`
 - Deploy command: `npx wrangler deploy`
 - Wrangler needs Node.js 22.12+: pinned in `.nvmrc` and `.node-version` (or set `NODE_VERSION=22` in the build variables).
+
+## 🚀 Live Demo
+
+You can view the live version of this project here: [**View Live Site**](https://project-commercial-next-ts.amir-computer-04-ir.workers.dev/)
