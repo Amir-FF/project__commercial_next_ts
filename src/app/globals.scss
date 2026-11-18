@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    letter-spacing: 2px;
+  }
+
+  *::selection {
+    background-color: #333;
+    color: #eee;
+    text-shadow: none;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}

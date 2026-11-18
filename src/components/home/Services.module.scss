@@ -1,0 +1,144 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/mixins' as *;
+
+.section {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 5px 15px 75px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  color: $navy;
+  text-align: center;
+}
+
+.reveal {
+  flex: 1 0 0;
+  margin: 20px;
+
+  @include below(768px) {
+    flex: 0 0 auto;
+    width: calc(100% - 40px);
+  }
+}
+
+.card {
+  height: 100%;
+  border-bottom: 4px solid $brand;
+  border-radius: 12px;
+  box-shadow: 0 8px 8px -3px rgba($brand, 0.71);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05, 1.05);
+  }
+
+  @include below(768px) {
+    &:hover {
+      transform: scale(1);
+    }
+  }
+}
+
+/* Scroll-in animation: cards rise one after another. */
+.hidden {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.visible {
+  animation: rise 1.25s ease-in-out backwards;
+  animation-delay: var(--delay, 0ms);
+
+  @include below(768px) {
+    animation-delay: 0ms;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hidden {
+    opacity: 1;
+    transform: none;
+  }
+
+  .visible {
+    animation: none;
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px 12px 0 0;
+}
+
+.title {
+  margin: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 2;
+}
+
+.linkWrap {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 30px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  padding: 0 5px 20px;
+  color: $navy;
+  transition: 0.5s;
+
+  &:hover {
+    color: $brand;
+  }
+
+  &:focus-visible {
+    border: 1px solid $navy;
+  }
+
+  &:focus-visible:hover {
+    border-color: $brand;
+    color: $brand;
+  }
+}
+
+.word {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 2;
+}
+
+.plus {
+  width: 10px;
+  margin-left: 5px;
+  font-size: 16px;
+}
+
+.provisions {
+  margin-top: 50px;
+  color: $muted;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 2;
+  text-align: center;
+}

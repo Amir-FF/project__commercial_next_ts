@@ -1,0 +1,184 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/mixins' as *;
+
+/* ---- complete project management ---- */
+.intro {
+  padding: 75px 0;
+  background-image: url('/images/backgrounds/pattern.png');
+
+  @include below(1100px) {
+    padding: 50px 15px;
+  }
+
+  @include below(900px) {
+    padding: 25px 15px;
+  }
+}
+
+.introInner {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1170px;
+  margin: 0 auto;
+
+  @include below(900px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.word {
+  width: 50%;
+  padding: 5px 15px;
+
+  @include below(1100px) {
+    padding: 15px 25px;
+  }
+
+  @include below(900px) {
+    width: 100%;
+  }
+}
+
+.heading {
+  margin: 10px 0;
+  color: $navy;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 2;
+
+  @include below(900px) {
+    text-align: center;
+  }
+}
+
+.paragraph {
+  margin: 10px 0;
+  color: $muted;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 2;
+  text-align: justify;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+
+  @include below(900px) {
+    justify-content: center;
+  }
+}
+
+.image {
+  width: 50%;
+  margin: 10px 0;
+  padding: 5px 15px;
+
+  @include below(900px) {
+    width: 100%;
+  }
+}
+
+/* ---- approvals ---- */
+.approvals {
+  padding: 75px 0;
+
+  @include below(1000px) {
+    padding: 25px 15px;
+  }
+}
+
+.approvalsInner {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.approvalsTitle {
+  margin: 10px 0 30px;
+  color: $navy;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 2;
+  text-align: center;
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.member {
+  flex: 1 0 0;
+  margin: 10px;
+  padding: 5px 15px;
+  border-bottom: 4px solid $brand;
+  box-shadow: 0 0 1px 0 #000;
+  transition: 0.5s;
+
+  &:hover {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.13);
+  }
+
+  @include below(1000px) {
+    flex: 0 0 auto;
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+.memberHead {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 16.67%;
+  padding: 5px 15px;
+
+  @include below(700px) {
+    width: 25%;
+  }
+
+  @include below(500px) {
+    width: 31.96%;
+  }
+}
+
+.memberInfo {
+  width: 83.33%;
+  padding: 5px 15px;
+
+  @include below(700px) {
+    width: 75%;
+  }
+
+  @include below(500px) {
+    width: 66.67%;
+  }
+}
+
+.role {
+  margin: 10px 0;
+  color: rgb(142, 143, 150);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 2;
+}
+
+.name {
+  margin: 10px 0;
+  color: $navy;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+.memberText {
+  margin: 10px 0;
+  color: $muted;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 2;
+  text-align: justify;
+}

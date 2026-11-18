@@ -1,0 +1,22 @@
+@use '../../styles/tokens' as *;
+
+.banner {
+  background-image: url('/images/backgrounds/page-banner.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 51% 0%;
+}
+
+.overlay {
+  padding: 85px 0;
+  background-color: rgba(37, 37, 37, 0.81);
+  text-align: center;
+}
+
+.title {
+  color: $snow;
+  font-size: 42px;
+  line-height: 1.3;
+  font-weight: 700;
+  text-transform: uppercase;
+}

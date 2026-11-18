@@ -1,0 +1,71 @@
+@use '../../styles/tokens' as *;
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $snow;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 2;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+
+  &:focus-visible {
+    border-color: $snow;
+  }
+}
+
+/* Hero / "Beyond the program" buttons */
+.orange,
+.navy,
+.navyInvert {
+  border: 2px solid $brand;
+  border-radius: 12px;
+  padding: 8px 21px;
+  background-color: $brand;
+
+  &:hover {
+    border-color: rgba($brand, 0.8);
+    background-color: rgba($brand, 0.8);
+    box-shadow: 1px 2px 14px 0 #000;
+  }
+}
+
+.navy,
+.navyInvert {
+  border-color: $navy;
+  background-color: $navy;
+}
+
+.navyInvert:hover {
+  border-color: $snow;
+  background-color: $snow;
+  color: #000;
+}
+
+/* About page button */
+.outlineOrange {
+  border: 2px solid $brand;
+  border-radius: 7px;
+  padding: 6px 18px;
+  background-color: $brand;
+
+  &:hover {
+    background-color: transparent;
+    color: rgb(37, 37, 37);
+  }
+}
+
+/* Blog "Read more" button */
+.blogNavy {
+  border-radius: 7px;
+  padding: 6px 18px;
+  background-color: $navy;
+
+  &:hover {
+    background-color: rgba($aqua, 0.8);
+  }
+}

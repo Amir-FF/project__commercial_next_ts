@@ -1,0 +1,164 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/mixins' as *;
+
+.header {
+  width: 100%;
+  padding: 15px 18px;
+  background-color: $navy;
+  color: $snow;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+/* ---- desktop menu ---- */
+.nav {
+  display: flex;
+  width: 50%;
+  text-align: center;
+
+  @include below(991px) {
+    display: none;
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 35px;
+  transition: 0.6s;
+
+  &:hover,
+  &.active {
+    color: $brand;
+  }
+
+  &:focus-visible {
+    border: 1px solid $snow;
+  }
+
+  &.active:focus-visible,
+  &:focus-visible:hover {
+    border-color: $brand;
+  }
+}
+
+/* ---- hamburger ---- */
+.menuButton {
+  display: none;
+  padding: 0;
+  border: none;
+  background: none;
+  color: $brand;
+  cursor: pointer;
+
+  @include below(991px) {
+    display: block;
+  }
+}
+
+/* ---- search ---- */
+.search {
+  display: flex;
+  width: 216px;
+  border: 1px solid $snow;
+
+  @include below(776px) {
+    display: none;
+  }
+}
+
+.searchButton {
+  flex: 0 0 69px;
+  padding: 5px 0;
+  border: none;
+  background-color: $brand;
+  color: $snow;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: rgba($brand, 0.8);
+  }
+
+  svg {
+    margin: 0 auto;
+    transform: translateY(2px);
+  }
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 0;
+  padding: 0 15px;
+  border: none;
+  background-color: $navy;
+  color: $snow;
+  -webkit-text-fill-color: $snow;
+  font-size: 13.3333px;
+  font-weight: 400;
+}
+
+/* ---- mobile drawer ---- */
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 12;
+  display: flex;
+
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+}
+
+.panel {
+  width: 80%;
+  min-width: 240px;
+  max-width: 440px;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #333;
+  text-align: center;
+}
+
+.menuLabel {
+  padding: 14px 0;
+  border-bottom: 1px solid #555;
+  font-size: 11px;
+  line-height: 20px;
+}
+
+.drawerLink {
+  display: block;
+}
+
+.drawerItem {
+  width: 90%;
+  margin: 0 auto;
+  padding: 12px 0;
+  border-bottom: 1px solid #555;
+  line-height: 20px;
+}
+
+.drawerItemActive {
+  width: 100%;
+  border-bottom-color: #fff;
+}
+
+.backdrop {
+  flex-grow: 1;
+  border: none;
+  background-color: rgba(51, 51, 51, 0.5);
+  cursor: default;
+}

@@ -1,0 +1,11 @@
+@mixin below($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin section-heading {
+  font-size: 2rem;
+  line-height: 2;
+  font-weight: 700;
+}
